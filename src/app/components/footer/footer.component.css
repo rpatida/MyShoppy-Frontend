@@ -1,0 +1,25 @@
+.product-footer {
+  background: #172337;
+  color: #878787;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 9px;
+  height: 300px;
+}
+
+.footer-container {
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+}
+
+.footer-container div p a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-container div p {
+  color: white;
+  text-decoration: none;
+}

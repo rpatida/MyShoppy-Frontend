@@ -1,0 +1,68 @@
+<section class="registration-section">
+  <div class="registration-container">
+    <div class="registration-form">
+      <ng-flash-message></ng-flash-message>
+      <div class="registration-title">Registration</div>
+      <form [formGroup]="userRegistrationForm" (ngSubmit)="onSave()">
+        <div class="registration-input-forms">
+          <div class="lables">
+            <label for="name">Name</label>
+          </div>
+          <div class="registration-username-input">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              formControlName="name"
+              placeholder="Name"
+            />
+          </div>
+          <div class="lables">
+            <label for="username">Username</label>
+          </div>
+          <div class="registration-username-input">
+            <input
+              type="text"
+              id="username"
+              name="username"
+              formControlName="username"
+              placeholder="User Name"
+            />
+          </div>
+          <div class="lables" style="margin-top: 10px">
+            <label for="password">Password</label>
+          </div>
+          <div class="registration-password-input">
+            <input
+              type="text"
+              id="password"
+              name="password"
+              formControlName="password"
+              placeholder="password"
+            />
+          </div>
+          <div class="lables" style="margin-top: 10px">
+            <label for="address">Address</label>
+          </div>
+          <div class="registration-address-input">
+            <input
+              type="text"
+              id="address"
+              name="address"
+              formControlName="address"
+              placeholder="Address"
+            />
+          </div>
+        </div>
+        <div style="margin-top: 20px">
+          <button type="submit" class="registration-button">CONTINUE</button>
+        </div>
+      </form>
+      <p style="margin-top: 25px; text-align: center">
+        <a routerLink="/login" class="registration-login-link"
+          >Existing User? Log in</a
+        >
+      </p>
+    </div>
+  </div>
+</section>

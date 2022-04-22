@@ -1,0 +1,47 @@
+.login-section {
+  background-color: #f1f3f6;
+}
+
+.login-container {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.login-form {
+  width: 300px;
+  padding: 30px;
+  margin: auto;
+  background-color: white;
+}
+.login-title {
+  height: 30px;
+  border-bottom: 1px solid grey;
+}
+
+.login-input-forms {
+  margin-top: 20px;
+}
+.login-username-input input {
+  width: 90%;
+  height: 30px;
+  border-radius: 2px;
+  outline: auto;
+}
+.login-password-input input {
+  width: 90%;
+  height: 30px;
+  border-radius: 2px;
+  outline: auto;
+}
+.login-button {
+  width: 93%;
+  height: 35px;
+  border-radius: 5px;
+  color: white;
+  background: #fb641b;
+  border: #fb641b;
+}
+
+.login-registration-link {
+  color: #2874f0;
+  font-weight: 500;
+}

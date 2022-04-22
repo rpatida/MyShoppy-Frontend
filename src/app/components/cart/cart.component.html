@@ -1,0 +1,111 @@
+<section class="product-section">
+  <div class="cart-container">
+    <div *ngIf="isCount; then loadedcart; else emptycontent"></div>
+    <ng-template #loadedcart>
+      <div class="cart-layout">
+        <div class="cart-detail">
+          <div class="cart-heading">
+            <h3 class="cart-title">My Cart ({{ Quantity }})</h3>
+          </div>
+          <div
+            *ngFor="let cartProduct of totalProduct"
+            class="cart-detail-view"
+          >
+            <div class="cart-img">
+              <img src="{{ cartProduct.imageUrl }}" class="cart-img-style" />
+            </div>
+            <div class="cart-name">
+              <h3>
+                {{ cartProduct.name }} - {{ cartProduct.description }} - &#8377;
+                {{ cartProduct.price }}
+              </h3>
+              <h6>Seller:TRIP</h6>
+              <h4>In Stock</h4>
+            </div>
+            <div class="cart-form">
+              <div style="display: flex">
+                <span
+                  ><button (click)="increaseProduct(cartProduct._id)">
+                    +
+                  </button></span
+                >&nbsp;
+                <span
+                  ><input
+                    type="text"
+                    style="width: 20px; text-align: center"
+                    value="{{ cartProduct.quantity }}"
+                    readonly /></span
+                >&nbsp;
+                <span
+                  ><button (click)="decreaseProduct(cartProduct._id)">
+                    -
+                  </button></span
+                >&nbsp;
+              </div>
+            </div>
+            <div class="cart-amount">
+              &#8377;{{ cartProduct.quantity * cartProduct.price }}
+            </div>
+            <div>
+              <i
+                class="fa fa-trash"
+                aria-hidden="true"
+                style="color: red; margin-top: 20px; cursor: pointer"
+                (click)="removeItem(cartProduct._id)"
+              ></i>
+            </div>
+          </div>
+          <div class="cart-bottom-heading">
+            <button class="cart-place-order" (click)="placedOrder()">
+              PLACE ORDER
+            </button>
+          </div>
+        </div>
+        <div class="cart-payment">
+          <div class="cart-heading">
+            <h3 class="cart-payment-heading">PAYMENT DETAIL</h3>
+          </div>
+          <div class="cart-payment-view">
+            <div class="cart-payment-view-div">
+              <span style="flex: 6">PRICE:</span>
+              <span style="flex: 4">{{ totalPrice }}</span>
+            </div>
+            <div class="cart-payment-view-div">
+              <span style="flex: 6">Discount:</span>
+              <span style="flex: 4; color: #388e3c">-100</span>
+            </div>
+            <div class="cart-payment-view-div">
+              <span style="flex: 6">Delivery Charges:</span>
+              <span style="flex: 4">40</span>
+            </div>
+            <div
+              class="cart-payment-view-div"
+              style="border-top: 1px dashed; border-bottom: 1px dashed"
+            >
+              <span style="flex: 6; margin-top: 10px">TOTAL AMOUNT</span>
+              <span style="flex: 4; margin-top: 10px">{{
+                totalPrice - 100 + 40
+              }}</span>
+            </div>
+            <p style="color: #388e3c; font-weight: bolder">
+              You will save 100 on this order!
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+    <ng-template #emptycontent>
+      <div class="cart-empty-cart">
+        <h2>My Cart</h2>
+        <div style="text-align: center">
+          <img src="../../../assets/empty-cart.png" />
+          <h2>Your cart is empty!</h2>
+          <h6>Add items to it now</h6>
+          <button class="cart-empty-shopnow" (click)="onShopNow()">
+            Shop Now
+          </button>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</section>

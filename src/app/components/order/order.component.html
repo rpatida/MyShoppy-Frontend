@@ -1,0 +1,55 @@
+<section class="order_section">
+  <div class="order_main">
+    <div class="order-box">
+      <table>
+        <tr>
+          <th>Order ID</th>
+          <th>Address</th>
+          <th>Total price</th>
+          <th>Total Quantity</th>
+          <th>Payment Type</th>
+          <th>Date/Time</th>
+        </tr>
+        <tr *ngFor="let order of orderList">
+          <td>
+            <a
+              (click)="showOrderDetails(order)"
+              style="text-decoration: underline; color: blue; cursor: pointer"
+              >{{ order._id }}</a
+            >
+          </td>
+          <td>{{ order.shippingInfo.address }}</td>
+          <td>{{ order.totalPrice }}</td>
+          <td>{{ order.totalQuantity }}</td>
+          <td>{{ order.paymentType }}</td>
+          <td>{{ order.createdAt }}</td>
+        </tr>
+      </table>
+      <div *ngIf="isOrderdetail">
+        <h3>
+          Order Details -
+          <span style="color: blue">{{ orderdetailNo }}</span>
+          <button class="collapse-button" (click)="hideOrderDetail()">
+            --
+          </button>
+        </h3>
+        <table>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>price</th>
+            <th>Quantity</th>
+            <th>Status</th>
+          </tr>
+          <tr *ngFor="let odl of orderDetailList">
+            <td>{{ odl.name }}</td>
+            <td>{{ odl.description }}</td>
+            <td>{{ odl.price }}</td>
+            <td>{{ odl.quantity }}</td>
+            <td>{{ odl.orderStatus }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

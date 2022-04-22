@@ -1,0 +1,54 @@
+.main-header {
+  background: #2874f0;
+  height: 50px;
+  color: white;
+  font-stretch: extra-expanded;
+}
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.header-right {
+  float: right;
+}
+
+.header-left span {
+  margin: 15px;
+}
+.header-right span {
+  margin: 15px;
+}
+.product-search-form {
+  display: inline;
+}
+.product-header-search {
+  border-radius: 3px;
+  border: 0;
+  outline: 0 none;
+  font-size: 14px;
+  height: 28px;
+  width: 55%;
+}
+
+.test {
+  background: #fb641b;
+}
+
+.header-count {
+  background: #fb641b;
+  border-radius: 10px;
+  color: white;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+}
+.product-header-cart {
+  color: white;
+  text-decoration: unset;
+}
+.header-right span a {
+  color: white;
+  text-decoration: none;
+}
